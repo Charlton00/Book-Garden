@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Bookstore</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        header {
+            background-color: #f2f2f2;
+            padding: 20 px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-right: 10px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        header nav ul li a:hover {
+            background-color: #ccc;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 5px;
+        }
+
+        .login-tab a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-tab a:hover {
+            background-color: #ccc;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search books...">
+            <button class="search-button">Search</button>
+        </div>
+        <div class="login-tab">
+            <a href="#">Login</a>
+        </div>
+    </header>
+
+    <section id="featured-books">
+        <h2>Featured Books</h2>
+        <div class="book-showcase">
+            <!-- Book items go here -->
+        </div>
+    </section>
+
+    <section id="top-sellers">
+        <h2>Top Sellers</h2>
+        <!-- Add top sellers section content here -->
+    </section>
+
+</body>
+</html>
