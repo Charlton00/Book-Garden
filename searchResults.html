@@ -1,9 +1,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
-  <head>
+<head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>NoResults   
+    <title>Search Results   
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -207,9 +207,6 @@ header {
     }
 
 
-
-
-
     </style>
   </head>
 
@@ -227,18 +224,8 @@ header {
       </ul>
     </nav>
   </header>
-
-
-  <div class="title">
-    <br>
-    No results found!
-    <br><br>
-
-
-</div>
-
-
-<div class="title" style="font-size:35px">
+ 
+<div class="title" style="font-size:35px"> <br><br>
   Search Again
 </div>
 <div class="search-container">
@@ -249,13 +236,46 @@ header {
   </div>
 
 
-
-<br><br><br><br>
-  <div class="footer">
+  <div class="title">
     <br>
-    <small>Copyright - The Bookstore Hub</small>
+    Search Results
     <br><br>
-  
 </div>
 
+<div class="flex-container">
+<div><img src="${book0_img}" alt="image not found"
+  width="150" height="225"></div>
+<h5>${book0}<br>
+  <br>Rating is : ${book0_rating}<br><br>
+  ${book0_stock} Copies in stock</a> <br>
+  <br><a href="bookDetails?book=${book0}" target="_blank">Order Here</a>
+</h5>
+</div>
+
+<div class="flex-container">
+    <div><img src="${book1_img}" alt="image not found"
+      width="150" height="225"></div>
+    <h5>${book1}<br>
+      <br>Rating is : ${book1_rating} <br><br>
+      ${book1_stock} Copies in stock</a> <br>
+      <br><a href="bookDetails?book=${book1}" target="_blank">Order Here</a>
+    </h5>
+</div>
+
+    <div class="flex-container">
+        <div><img src="${book2_img}" alt="image not found"
+          width="150" height="225"></div>
+        <h5>${book2}<br>
+          <br>Rating is : ${book2_rating} <br><br>
+          ${book2_stock} Copies in stock</a> <br>
+          <br><a href="bookDetails?book=${book2}" target="_blank">Order Here</a>
+        </h5>
+    </div>
+    <div class="footer">
+      <br>
+      <small>Copyright - The Bookstore Hub</small>
+      <br><br>
+    
+  </div>
 </body>
+  
