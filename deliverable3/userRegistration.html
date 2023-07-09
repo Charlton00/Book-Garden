@@ -171,6 +171,16 @@
       background-color: #555;
     }
 
+    .form-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-check-label {
+      margin: 0;
+    }
+
     footer {
       background-color: #f2f2f2;
       padding: 20px;
@@ -201,10 +211,10 @@
     <nav>
       <ul>
         <li><a href="homeOBS.html" class="home-button"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="#" class="promo-button"><i class="fa fa-money-bill"></i>Promotions</a></li>
         <li><a href="searchResults.html" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
         <li><a href="orderBook.html" class="cart-button"><i class="fa fa-shopping-cart"></i>View cart</a></li>
-        <li><a href="viewProfile.html" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
+        <li><a href="viewProfile.html" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a>
+        </li>
         <li><a href="userLogin.html" class="login-button"><i class="fa fa-user"></i>Login</a></li>
       </ul>
     </nav>
@@ -215,7 +225,7 @@
       <label for="first-name">First Name:</label>
       <input type="text" id="first-name" name="first-name" required>
       <label for="last-name">Last Name:</label>
-      <input type="text" id="last-name" name="last-name" >
+      <input type="text" id="last-name" name="last-name">
       <label for="street">Street:</label>
       <input type="text" id="street" name="street" required>
       <label for="city">City:</label>
@@ -225,10 +235,14 @@
       <label for="zip-code">Zip Code:</label>
       <input type="text" id="zip-code" name="zip-code" required>
       <label for="phone-number">Phone Number:</label>
-      <input type="text" id="phone-number" name="phone-number" >
+      <input type="text" id="phone-number" name="phone-number">
       <label for="email">Email Address:</label>
       <input type="email" id="email" name="email" required>
-      <button type = "submit" onclick="window.location.href = 'registrationConfirmation.html';">Register</button>
+      <div class="form-check">
+        <label class="form-check-label" for="promotion-subscribe">Register for Promotions:</label>
+        <input class="form-check-input" type="checkbox" id="promotion-subscribe" name="promotion-subscribe">
+      </div>
+      <button type="submit" onclick="window.location.href = 'registrationConfirmation.html';">Register</button>
     </form>
   </section>
 
