@@ -51,7 +51,7 @@
             background-color: #c5f5c5;
             padding: 10px 20px;
             font-size: 18px;
-            margin-right: 50px;
+            
         }
 
         header nav ul li a.browse-button {
@@ -88,7 +88,21 @@
 
         .search-bar input[type="text"] {
             padding: 5px;
-            width: 1000px;
+            width: 800px;
+        }
+
+        header nav ul li a.promo-button {
+            border: 2px solid #e5f2e5;
+            background-color: #c5f5c5;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        header nav ul li a.loggedIn-button {
+            border: 2px solid #e5f2e5;
+            background-color: #c5f5c5;
+            padding: 10px 20px;
+            font-size: 18px;
         }
 
         .login-tab {
@@ -179,11 +193,12 @@
             <ul>
                 <li><a href="#" class="home-button"><i class="fa fa-home"></i>Home</a></li>
                 <li><a href="#" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
+                <li><a href="#" class="promo-button"><i class="fa fa-user"></i>Promotions</a></li>
                 <li class="search-bar">
                     <input type="text" placeholder="Search books...">
                     <button class="search-button"><i class="fa fa-search"></i>Search</button>
                 </li>
-                <li><a href="#" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+                <li><a href="#" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
                 <li><a href="#" class="checkout-button"><i class="fa fa-shopping-cart"></i>Checkout</a></li>
             </ul>
         </nav>
@@ -191,26 +206,26 @@
 
     <section>
         <div class="profile-info">
-            <h2>Welcome, [User's Name]!</h2>
+            <h2>Welcome, ${currentUser.firstName},</h2>
             <h3>Account Information</h3>
-            <p>Email Address: [User's Email Address]</p>
-            <p>First Name: [User's First Name]</p>
-            <p>Last Name: [User's Last Name]</p>
-            <p>Phone Number: [User's Phone Number]</p>
+            <p>Email Address: ${currentUser.email}</p>
+            <p>First Name: ${currentUser.firstName}</p>
+            <p>Last Name: ${currentUser.lastName}</p>
+            <p>Phone Number: ${currentUser.phone}</p>
 
             <h3>Address Information</h3>
-            <p>Street: [User's Street]</p>
-            <p>City: [User's City]</p>
-            <p>Zip Code: [User's Zip Code]</p>
-            <p>State: [User's State]</p>
-            <p>Country: [User's Country]</p>
+            <p>Street: ${currentUser.street}</p>
+            <p>City: ${currentUser.city}</p>
+            <p>Zip Code: ${currentUser.zip}</p>
+            <p>State: ${currentUser.state}</p>
+            <p>Country: ${currentUser.street}</p>
 
             <h3>Card Information</h3>
-            <p>Name on Card: [User's Name on Card]</p>
-            <p>Card Number: [User's Card Number]</p>
-            <p>CVN: [User's CVN]</p>
-            <p>Card Expiration Date: [User's Card Expiration Date]</p>
-            <p>Zip Code: [User's Card Zip Code]</p>
+            <p>Name on Card: ${currentUser.nameCard}</p>
+            <p>Card Number: ${currentUser.cardNumber}</p>
+            <p>CVN: ${currentUser.userCVN}</p>
+            <p>Card Expiration Date: ${currentUser.expirationDate}</p>
+            <p>Zip Code: ${currentUser.zip}</p>
 
             <button class="edit-profile-button">Edit Profile</button>
             <button class="password-profile-button">Change Password</button>
