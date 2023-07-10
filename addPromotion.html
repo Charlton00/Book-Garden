@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<!-- <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> -->
 <html>
 <head>
     
@@ -253,14 +253,14 @@
 </div>
 
 <div class="addPromotion">
-    <%--@elvariable id="login" type=""--%>
+   <!-- <%--@elvariable id="login" type=""--%>-->
   <form:form method="POST" modelAttribute="addPromotionForm">
     <div class="MyForm form-group">
 
    <!-- Discount input -->
         <div class="form-outline mb-4">
             <form:input type="text" class="form-control" id="percentOff" path="percentOff" placeholder="Enter Discount (in %)" />
-            <label class="form-label" for="form2Example1"> Discount </label> </div>   
+            <label class="form-label" for="form2Example1"> Discount (%) </label> </div>   
 <!-- Start Date input -->
         <div class="form-outline mb-4">
             <form:input type="name" class="form-control" id="startDate" path="startDate" placeholder="Enter Start Date" />
@@ -284,7 +284,7 @@
 
 <div class="footer">
     <br>
-    <small>Copyright - Company Name</small>
+    <small>Copyright - Bookstore Hub</small>
     <br><br>
 </div>
 </div>

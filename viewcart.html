@@ -1,5 +1,5 @@
 
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!-- <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> -->
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -317,8 +317,8 @@ header {
       <div class='flex-container'>
         <div class='order-info-content'>
           <h2>Order Summary</h2>
-          <span class='thin'>${movie}</span>
-          <br>Adult Ticket<br> <span class='thin small'> Showtime: ${showtime} <br></span>
+          <span class='thin'>${book}</span>
+          <br>Book Purchased<br> <span class='thin small'> Copies: ${bookPurchased} <br></span>
           Subtotal Cost: $7.00
           
         </td>
@@ -327,17 +327,13 @@ header {
       <br><br>
     
         <td>
-        <span class='thin'>${movie}</span>
-        <br>Adult Ticket<br> <span class='thin small'> Showtime: ${showtime} <br></span>
+        <span class='thin'>${book}</span>
+        <br>Book Sold<br> <span class='thin small'> Copies: ${bookSold} <br></span>
         Subtotal Cost: $7.00
       </tr>
     
         <br><br>
 
-        <td>
-        <span class='thin'>${movie}</span>
-        <br>Youth Ticket<br> <span class='thin small'> Showtime: ${showtime} <br></span>
-        Subtotal Cost: $5.00
 
         <br><br>
   Have a Promo Code? Enter Here:<br>
@@ -427,22 +423,13 @@ header {
 <br><br><br><br><br><br>
 <div class="footer">
   <br>
-  <small>Copyright - The Bookstore Hub</small>
+  <small>Copyright - Bookstore Hub</small>
   <br><br>
 </div>
 
 </body>
 
-    <script>
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-      </script>
+   
       
 
 

@@ -1,10 +1,10 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<!-- <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> -->
 <html>
 <head>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>Add Movie   
+    <title>Add Book   
     </title>
     <meta name="viewport" content="width=device-width">
 
@@ -14,7 +14,7 @@
         height:auto;
         font-family: "Arial", sans-serif;
       }
-      .addMovie{
+      .addBook{
         border-radius:25px;
         background-color:lightgrey;
         width:50%;
@@ -223,74 +223,68 @@
   </header>
 
 <div class="title">
-    Add Movie
+    Add Book
 </div>
 
-<div class="addMovie">
-    <%--@elvariable id="login" type=""--%>
-  <form:form method="POST" modelAttribute="addMovieForm">
+<div class="addBook">
+    <!-- <%--@elvariable id="login" type=""--%> -->
+  <form:form method="POST" modelAttribute="addBookForm">
     <div class="MyForm form-group">
 
-<!-- Movie Title input -->
+<!-- Book Title input -->
         <div class="form-outline mb-4">
-            <form:input type="name" class="form-control" id="movieTitle" path="movieTitle" placeholder="Enter Movie Title" />
-            <label class="form-label" for="form2Example1">Movie Title</label> </div>   
+            <form:input type="name" class="form-control" id="bookTitle" path="bookTitle" placeholder="Enter Book Title" />
+            <label class="form-label" for="form2Example1">Book Title</label> </div>   
     <!-- Category input -->
         <div class="form-outline mb-4">
             <form:input type="text" class="form-control" id="category" path="category" placeholder="Enter Category" />
             <label class="form-label" for="form2Example1">Category</label> </div>   
-<!-- Director input -->
+<!-- Author input -->
         <div class="form-outline mb-4">
-            <form:input type="name" class="form-control" id="director" path="director" placeholder="Enter Dircetor" />
-            <label class="form-label" for="form2Example1">Director</label> </div> 
-<!-- Producer input -->  
+            <form:input type="name" class="form-control" id="author" path="author" placeholder="Enter Author" />
+            <label class="form-label" for="form2Example1">Author</label> </div> 
+<!-- Edition input -->  
         <div class="form-outline mb-4">
-            <form:input type="name" class="form-control" id="producer" path="producer" placeholder="Enter Producer" />
-            <label class="form-label" for="form2Example1">Producer</label>  </div>
+            <form:input type="name" class="form-control" id="edition" path="edition" placeholder="Enter Edition" />
+            <label class="form-label" for="form2Example1">Edition</label>  </div>
 
-<!-- Cast input -->   
+<!-- Publisher input -->   
             <div class="form-outline mb-4">
-            <form:input type="name" class="form-control" id="cast" path="cast" placeholder="Enter Cast" />
-            <label class="form-label" for="form2Example1">Cast</label></div>
+            <form:input type="name" class="form-control" id="publisher" path="publisher" placeholder="Enter Publication" />
+            <label class="form-label" for="form2Example1">Publisher</label></div>
 
 
-<!-- Synopsis input -->   
+<!-- Publisher Year input -->   
         <div class="form-outline mb-4">
-            <form:input type="name" class="form-control" id="synopsis" path="synopsis" placeholder="Enter Synopsis" />
-            <label class="form-label" for="form2Example1">Synopsis</label> </div>
-<!-- Trailer Picture input -->    
+            <form:input type="name" class="form-control" id="publicationYear" path="publicationYear" placeholder="Enter Publication Year" />
+            <label class="form-label" for="form2Example1">Publication Year</label> </div>
+<!-- ISBN input -->    
         <div class="form-outline mb-4">
-            <form:input type="name" class="form-control" id="trailerPicture" path="trailerPicture" placeholder="Upload Trailer Picture" />
-            <label class="form-label" for="form2Example1">Trailer Picture</label> </div> 
-<!-- Movie Trailer input -->     
+            <form:input type="name" class="form-control" id="isbn" path="isbn" placeholder="Enter ISBN" />
+            <label class="form-label" for="form2Example1">ISBN</label> </div> 
+<!-- Copies in Stock input -->     
         <div class="form-outline mb-4">
-            <form:input type="name" class="form-control" id="trailerVideo" path="trailerVideo" placeholder="Enter URL for the Movie Trailer" />
-            <label class="form-label" for="form2Example1">Movie Trailer</label> </div>
+            <form:input type="name" class="form-control" id="currentStock" path="currentStock" placeholder="Enter current Stock amount" />
+            <label class="form-label" for="form2Example1">Current Stock</label> </div>
 
-
-
-<!-- Rotten Tomatoes Rating input -->  
+<!-- Buying Price input -->  
         <div class="form-outline mb-4">
-        <form:input type="name" class="form-control" id="rtRating" path="rtRating" placeholder="Enter Rotten Tomatoes Rating (int between 0-100)" />
-        <label class="form-label" for="form2Example1">Rotten Tomatoes Rating</label></div>
-<!-- Film Rating input -->  
+        <form:input type="name" class="form-control" id="buyPrice" path="buyPrice" placeholder="Enter Buying price (USD)" />
+        <label class="form-label" for="form2Example1">Buy Price</label></div>
+<!--  Selling Price input -->  
         <div class="form-outline mb-4">
-            <form:input type="name" class="form-control" id="filmRatingCode" path="filmRatingCode" placeholder="Enter Film Rating Code" />
-            <label class="form-label" for="form2Example1">Film Rating Code</label>  </div>  
+            <form:input type="name" class="form-control" id="sellPrice" path="sellPrice" placeholder="Enter Selling price (USD)" />
+            <label class="form-label" for="form2Example1">Selling Price</label>  </div>  
 
             <br>
             <br>
 
  <!-- Submit button -->
- <form:button type="submit" class="btn btn-secondary btn-block mb-4">Add new Movie</form:button>
+ <form:button type="submit" class="btn btn-secondary btn-block mb-4">Add new Book</form:button>
   </form:form>
 </div>
 
-<div class="footer">
-    <br>
-    <small>Copyright - Company Name</small>
-    <br><br>
-</div>
+
 </div>
 </div>
 <br><br><br><br>
@@ -298,7 +292,7 @@
 
 <div class="footer">
 <br>
-<small>Copyright - MovieHub</small>
+<small>Copyright - Bookstore Hub</small>
 <br><br>
 
 </div>
