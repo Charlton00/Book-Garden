@@ -96,15 +96,16 @@ header {
       font-size: 82px;
       color: #333;
       margin-bottom: 50px;
+      text-align: center;
     }
 
     header nav ul {
-      list-style:none;
+      list-style: none;
       padding: 0;
       margin: auto;
-      float:none;
+      float: none;
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
     }
 
     header nav ul li {
@@ -118,7 +119,6 @@ header {
       padding: 5px 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      float: right;
     }
 
     header nav ul li a.home-button {
@@ -127,7 +127,7 @@ header {
       padding: 10px 20px;
       font-size: 18px;
       margin: auto;
-      
+
     }
 
     header nav ul li a.promo-button {
@@ -135,16 +135,16 @@ header {
       background-color: #c5f5c5;
       padding: 10px 20px;
       font-size: 18px;
-      
+
       margin: auto;
     }
-    
+
     header nav ul li a.browse-button {
       border: 2px solid #e5f2e5;
       background-color: #c5f5c5;
       padding: 10px 20px;
       font-size: 18px;
-      
+
       margin: auto;
     }
 
@@ -153,7 +153,6 @@ header {
       background-color: #c5f5c5;
       padding: 10px 20px;
       font-size: 18px;
-      float: right;
       margin: auto;
     }
 
@@ -162,7 +161,6 @@ header {
       background-color: #c5f5c5;
       padding: 10px 20px;
       font-size: 18px;
-      float: right;
       margin: auto;
     }
 
@@ -171,7 +169,6 @@ header {
       background-color: #c5f5c5;
       padding: 10px 20px;
       font-size: 18px;
-      
       margin: auto;
     }
 
@@ -215,12 +212,12 @@ header {
     <h1>The Bookstore Hub</h1>
     <nav>
       <ul>
-        <li><a href="deliverable3/homeOBS.html" class="home-button"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="#" class="promo-button"><i class="fa fa-user"></i>Promotions</a></li>
-        <li><a href="#" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
-        <li><a href="#" class="cart-button"><i class="fa fa-shopping-cart"></i>View cart</a></li>
-        <li><a href="#" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
-        <li><a href="#" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="homeOBS.html" class="home-button"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="" class="promo-button"><i class="fa fa-money-bill"></i>Promotions</a></li>
+        <li><a href="searchResults.html" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
+        <li><a href="orderBook.html" class="cart-button"><i class="fa fa-shopping-cart"></i>View cart</a></li>
+        <li><a href="viewProfile.html" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
+        <li><a href="userLogin.html" class="login-button"><i class="fa fa-user"></i>Login</a></li>
       </ul>
     </nav>
   </header>
@@ -248,7 +245,9 @@ header {
 <h5>${book0}<br>
   <br>Rating is : ${book0_rating}<br><br>
   ${book0_stock} Copies in stock</a> <br>
-  <br><a href="bookDetails?book=${book0}" target="_blank">Order Here</a>
+  <br><!-- <a href="bookDetails?book=${book0}" target="_blank">Order Here</a> -->
+          <a href="orderBook.html">
+            <button" class="btn btn-secondary btn-block mb-4">Order Here</button>
 </h5>
 </div>
 
@@ -258,7 +257,9 @@ header {
     <h5>${book1}<br>
       <br>Rating is : ${book1_rating} <br><br>
       ${book1_stock} Copies in stock</a> <br>
-      <br><a href="bookDetails?book=${book1}" target="_blank">Order Here</a>
+      <br><!-- <a href="bookDetails?book=${book1}" target="_blank">Order Here</a> -->
+            <a href="orderBook.html">
+              <button" class="btn btn-secondary btn-block mb-4">Order Here</button>
     </h5>
 </div>
 
@@ -268,7 +269,9 @@ header {
         <h5>${book2}<br>
           <br>Rating is : ${book2_rating} <br><br>
           ${book2_stock} Copies in stock</a> <br>
-          <br><a href="bookDetails?book=${book2}" target="_blank">Order Here</a>
+          <br><!-- <a href="bookDetails?book=${book2}" target="_blank">Order Here</a> -->
+          <a href="orderBook.html">
+            <button" class="btn btn-secondary btn-block mb-4">Order Here</button>
         </h5>
     </div>
     <div class="footer">
