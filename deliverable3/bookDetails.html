@@ -1,55 +1,41 @@
-<!-- <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%> -->
+<!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheets" href="css/stylesheet.css">
-    <title>bookDetails
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <style>
-     body{
-      background:linear-gradient(to bottom, #f2f2f2,#e6e6e6);
-        height:auto;
-        font-family: "Arial", sans-serif;
-      }
-      
-      .login{
-        border-radius:25px;
-        background-color:#c5f5c5;
-        width:50%;
-        padding: 14px 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        text-align:center;
-      }
-      .title{
-        font-size:50px;
-        text-align: center;
-        font-family:'Arial', sans-serif;
-      }
-      header {
-      background-color: #c0d8c6;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>BookstoreHub - Book Details</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* CSS styles for the headers */
+    body {
+      font-family: "Oswald", sans-serif;
+      background: linear-gradient(to bottom, #f2f2eb, #f2f2eb);
+    }
+
+    header {
+      background-color: #b98f68;
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color: #f2f2eb;
     }
 
     header h1 {
-      font-size: 82px;
-      color: #333;
-      margin-bottom: 50px;
-      text-align: center;
+      font-size: 70px;
+      margin: 0;
     }
 
     header nav ul {
       list-style: none;
       padding: 0;
-      margin: auto;
-      float: none;
+      margin: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      align-items: center;
     }
 
     header nav ul li {
@@ -58,83 +44,49 @@
 
     header nav ul li a {
       text-decoration: none;
-      font-size: 18px;
-      color: #333;
+      font-size: 16px;
+      color: white;
       padding: 5px 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #2b0d0a;
       border-radius: 5px;
+      background-color: #78504b;
     }
 
-    header nav ul li a.home-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-
+    header nav ul li.search-bar {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
     }
 
-    header nav ul li a.promo-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
+    header nav ul li.search-bar select {
+      padding: 7px;
+      margin-right: 0;
     }
 
-    header nav ul li a.browse-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
+    header nav ul li.search-bar input[type="text"] {
+      padding: 7px;
+      margin-right: 5px;
+      width: 300px;
     }
 
-    header nav ul li a.login-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.loggedIn-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.cart-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a:hover {
-      background-color: #ccc;
-    }
-
-    .login-tab {
-      margin-left: auto;
-    }
-
-    .login-tab a {
-      text-decoration: none;
-      font-size: 18px;
-      color: #333;
-      padding: 5px 10px;
-      border: 1px solid #ccc;
+    header nav ul li.search-bar button {
+      padding: 7px 20px;
+      background-color: #78504b;
+      border: 1px solid #2b0d0a;
+      color: white;
       border-radius: 5px;
+      cursor: pointer;
+      margin-left: -5px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
     }
 
-    .login-tab a:hover {
-      background-color: #ccc;
+    .logo img {
+      height: 150px;
+      margin-right: 10px;
     }
 
     section {
@@ -142,271 +94,110 @@
       text-align: center;
     }
 
-    #greeting-title {
-      font-size: 36px;
-      margin-bottom: 20px;
+    .book-showcase {
+      display: flex;
+      overflow-x: auto;
+      gap: 100px;
+      flex-wrap: nowrap;
+      justify-content: center;
     }
 
-.flex-container {
-  display:flex;
-  background-color:rgb(203, 200, 200);
-  justify-content: center;
-  margin-left: 200px;
-  margin-right: 200px;
-  border-radius: 25px; 
-}
-
-.bookDetTitle{
-        border-radius:25px;
-        background-color:#c5f5c5;
-        width:100%;
-        padding: 14px 20px;
-        margin-left: 25%;
-        margin-right: 25%;
-        margin-top: 15px;
-        padding-bottom: 5px;
-        font-size: 25px;
-
-        text-align:center;
-        float:left;
-}
-        .bookDetTitle .inputs span{font-size:24px;float: left;}
-        .bookDetTitle .inputs input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
-        .bookDetTitle .inputs input{float:center;}[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
-        
-
-
-.flex-container > div {
-  background: #c5f5c5;
-  margin:25px;
-  padding:1px;
-  font-size: 10px;
-}
-.flex-container .inputs2 span{font-size: 24px;float: left;font-weight: 700;}
-.flex-container .inputs2 input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
-.flex-container .inputs2 input{float:center;}[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
-
-a{
-  color: black;
-}
-
-h5{
-  text-align:center;
-}
-
-
-.footer{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    text-align:center;
-    background-color:#f2f2f2;
-    color: #333;  
-}
-          
-.seatingChart {
-  align-items:center;
-
-}
-
-.help-tip{
-    position: static;
-    text-align: center;
-    background-color: #BCDBEA;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    font-size: 14px;
-    line-height: 26px;
-    cursor: default;
-}
-
-.help-tip:before{
-    content:'?';
-    font-weight: bold;
-    color:#fff;
-}
-
-.help-tip:hover p{
-    display:block;
-    transform-origin: 100% 0%;
-
-    -webkit-animation: fadeIn 0.3s ease-in-out;
-    animation: fadeIn 0.3s ease-in-out;
-
-}
-
-.help-tip p{    /* The tooltip */
-    display: none;
-    text-align: center;
-    background-color: #1E2021;
-    padding: 20px;
-    width: 300px;
-    position: absolute;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    right: -4px;
-    color: #FFF;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-.help-tip p:before{ /* The pointer of the tooltip */
-    float: right;
-    content: '';
-    width:0;
-    height: 0;
-    border:6px solid transparent;
-    border-bottom-color:#1E2021;
-    right:10px;
-    top:-12px;
-}
-
-.help-tip p:after{ /* Prevents the tooltip from being hidden */
-    width:100%;
-    height:40px;
-    content:'';
-    position: absolute;
-    top:-40px;
-    left:0;
-}
-
-/* CSS animation */
-@-webkit-keyframes fadeIn {
-    0% { 
-        opacity:0; 
-        transform: scale(0.6);
+    .book-item {
+      flex-grow: 1;
+      margin-right: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ebcb9e;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 50%;
+      margin-bottom: 100px;
+      font-family: "Oswald", sans-serif;
     }
 
-    100% {
-        opacity:100%;
-        transform: scale(1);
+    .add-to-cart-button,
+    .back-home-button {
+      flex-grow: 1;
+      margin-right: 10px;
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #570e06;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
     }
-}
+    footer {
+      background-color: #996a44;
+      padding: 5px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
 
-@keyframes fadeIn {
-    0% { opacity:0; }
-    100% { opacity:100%; }
-}
-
-
-    </style>
-  </head>
+    .footer-content {
+      color: white;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+</head>
 
 <body>
-
-  
   <header>
-    <h1>The Bookstore Hub</h1>
+    <div class="logo">
+      <img src="Logo_For_Bookstore_hub.jpg" alt="Logo">
+      <h1>The Bookstore Hub</h1>
+    </div>
     <nav>
       <ul>
-        <li><a href="homeOBS.html" class="home-button"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="" class="promo-button"><i class="fa fa-money-bill"></i>Promotions</a></li>
-        <li><a href="searchResults.html" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
-        <li><a href="viewcart.html" class="cart-button"><i class="fa fa-shopping-cart"></i>View cart</a></li>
-        <li><a href="viewProfile.html" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
-        <li><a href="userLogin.html" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li class="search-bar">
+          <select>
+            <option value = "All">All</option>
+            <option value="authors">Authors</option>
+            <option value="title">Title</option>
+            <option value="isbn">ISBN</option>
+          </select>
+          <input type="text" placeholder="Search books...">
+          <button class="search-button"><i class="fa fa-search"></i></button>
+        </li>
+        <li><a href="#" class="edit-button"><i class="fa fa-user-cog"></i>Edit Profile</a></li>
+        <li><a href="#" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="#" class="checkout-button"><i class="fa fa-shopping-cart"></i>Checkout</a></li>
       </ul>
     </nav>
   </header>
 
-
-
-  <div class="title">
-    <br>
-    ${title} 
-    <br>
-  
-</div>
-
-<div class="flex-container">
-  <div class="bookDetTitle">
-    <div><img src="${image}" alt="image not found"
-  width="200" height="300"></div>
-  <br>
-  <br> <br>
- </div>
-</h5>
-  
-    <form:form method="POST">
-
-<br>
-
-<div class="inputs"><div class="inputs2"> 
-  <span>Author(s):</span></div> <br> <br>
-  ${author} </div> <br><br>
-  
-<div class="inputs"> <div class="inputs2">
-    <span>Category:</span></div> <br><br>
-    ${category} </div> <br><br>
-
-<div class="inputs"><div class="inputs2">
-  <span>Edition:</span></div><br> <br> 
-  ${edition} </div> <br><br>
-  
-<div class="inputs"><div class="inputs2"> 
-  <span>Publisher:</span></div> <br><br>
-  ${publisher} </div> <br><br>
-
-<div class="inputs"> <div class="inputs2">
-      <span>Publication Year:</span></div><br> <br>
-      ${publicationYear}%</div> <br><br>
-    
-<div class="inputs"> <div class="inputs2">
-        <span>ISBN:</span></div><br> <br>
-        ${isbn} </div> <br><br>
-
-<div class="inputs"> <div class="inputs2">
-          <span>Copies in stock:</span></div> <br><br>
-          ${currentStock} </div> <br><br>
-
-<div class="inputs"> <div class="inputs2">
-      <span>Minimum Threshold:0 Copies (Sold Out)</span></div> <br><br><br><br>
-      
-
-      <div class="inputs"> <div class="inputs2">
-        <span>Buying Price:</span></div> <br><br>
-        ${buyPrice} </div> <br><br>
-
-        <div class="inputs"> <div class="inputs2">
-          <span>Selling Price:</span></div> <br><br>
-          ${sellPrice} </div> <br><br>
-
-    <div class="inputs"><div class="inputs2">
-   
-    <!--<a href="orderBook?show=${show1}" target="_self">${showtime1}</a> <br> <br> > -->
-    <a href="orderBook.html"><button" class="btn btn-secondary btn-block mb-4">Order Now</button></a> 
-
-    <a href="sellBook.html"><button" class="btn btn-secondary btn-block mb-4">Sell Copy Now</button></a>
-
-  </div> <br>
-    
-        
-          </a> 
+  <section>
+    <div class="book-showcase">
+      <div class="book-item">
+        <img src="book1.jpg" alt="Book Image">
+        <h2 class="book-title">Book Title 1</h2>
+        <p class="book-author">Author: Author Name 1</p>
+        <p class="book-category">Category: Category 1</p>
+        <p class="book-edition">Edition: 1st Edition</p>
+        <p class="book-publisher">Publisher: Publisher Name 1</p>
+        <p class="book-publication-year">Publication Year: 2023</p>
+        <p class="book-isbn">ISBN: 9781234567890</p>
+        <p class="book-copies-in-stock">Copies in Stock: 10</p>
+        <p class="book-price">Price: $19.99</p>
+        <div class="button-container">
+          <button class="add-to-cart-button" onclick="window.location.href = 'orderBook.html';">Add to Cart</button>
+          <button class="back-home-button" onclick="window.location.href = 'homeOBS.html';">Back to Home</button>
         </div>
+      </div>
+    </div>
+  </section>
 
-
-
-  <br>
-  <a href="homeOBS.html"><button" class="btn btn-secondary btn-block mb-4">Back to Home</button></a>    
-  
-  
-
-
-<br> <br> <br> <br>
-
-
-
-
-<div class="footer">
-  <br>
-  <small>Copyright - Bookstore Hub</small>
-  <br><br>
-
-</div>
-
-
+  <footer>
+    <div class="footer-content">
+      <p>Created by Group 3</p>
+    </div>
+  </footer>
 </body>
 
 </html>

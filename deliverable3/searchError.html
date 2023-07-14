@@ -1,111 +1,79 @@
-<!-- <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%> -->
+<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheets" href="css/stylesheet.css">
-    <title>NoResults   
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <style>
-      body{
-        background:linear-gradient(to bottom, #f2f2f2,#e6e6e6);
-        height:auto;
-        font-family: "Arial", sans-serif;
-      }
-      .login{
-        border-radius:25px;
-        background-color:#c5f5c5;
-        width:50%;
-        padding: 14px 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        text-align:center;
-      }
-      .title{
-        font-size:50px;
-        text-align: center;
-        font-family:'Arial', sans-serif;
-      }
-  
 
-.flex-container {
-  display:flex;
-  justify-content: center;
-  margin-left: 7%;
-  margin-right: 7%;
-  border-radius: 25px; 
-}
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>BookstoreHub - Search Results</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* CSS styles for the headers */
+    body {
+      font-family: "Oswald", sans-serif;
+      background: linear-gradient(to bottom, #f2f2eb, #f2f2eb);
+    }
 
-.flex-container > div {
-  margin:25px;
-  padding:1px;
-  font-size: 10px;
-}
-
-a{
-  color: black;
-}
-
-h5{
-  text-align:center;
-}
-
-
-.footer{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    text-align:center;
-    background-color:#f2f2f2;
-    color: #333;  
-}
-
-.search-container {
-  border-radius:25px;
-  width:50%;
-  padding: 14px 20px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align:center;
-}
-
-
-.search-container button {
-  padding: 6px 10px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-
-
-
-
-header {
-      background-color: #c0d8c6;
+    header {
+      background-color: #b98f68;
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color: #f2f2eb;
     }
 
     header h1 {
-      font-size: 82px;
-      color: #333;
-      margin-bottom: 50px;
-      text-align: center;
+      font-size: 70px;
+      margin: 0;
     }
 
     header nav ul {
       list-style: none;
       padding: 0;
-      margin: auto;
-      float: none;
+      margin: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    header nav ul li.search-bar {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    header nav ul li.search-bar select {
+      padding: 7px;
+      margin-right: 0;
+    }
+
+    header nav ul li.search-bar input[type="text"] {
+      padding: 7px;
+      margin-right: 5px;
+      width: 300px;
+    }
+
+    header nav ul li.search-bar button {
+      padding: 7px 20px;
+      background-color: #78504b;
+      border: 1px solid #2b0d0a;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: -5px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    .logo img {
+      height: 150px;
+      margin-right: 10px;
     }
 
     header nav ul li {
@@ -114,145 +82,162 @@ header {
 
     header nav ul li a {
       text-decoration: none;
-      font-size: 18px;
-      color: #333;
+      font-size: 16px;
+      color: white;
       padding: 5px 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #2b0d0a;
       border-radius: 5px;
+      background-color: #78504b;
     }
 
-    header nav ul li a.home-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-
-    }
-
-    header nav ul li a.promo-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
-    }
-
-    header nav ul li a.browse-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
-    }
-
-    header nav ul li a.login-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.loggedIn-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.cart-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a:hover {
-      background-color: #ccc;
-    }
-
-    .login-tab {
-      margin-left: auto;
-    }
-
-    .login-tab a {
-      text-decoration: none;
-      font-size: 18px;
-      color: #333;
-      padding: 5px 10px;
-      border: 1px solid #ccc;
+    /* CSS styles for the search results page */
+    .search-results-container {
+      background-color: #ffdab7;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
       border-radius: 5px;
-    }
-
-    .login-tab a:hover {
-      background-color: #ccc;
-    }
-
-    section {
-      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       text-align: center;
+      font-size: 16px;
+      color: #4d4c4c;
     }
 
-    #greeting-title {
-      font-size: 36px;
+    .search-results-container h2 {
       margin-bottom: 20px;
+      font-size: 24px;
+      color: #2b0d0a;
     }
 
+    .book-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #ebcb9e;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      font-family: "Oswald", sans-serif;
+      text-align: left;
+    }
 
+    .book-item-image {
+      flex-shrink: 0;
+      width: 120px;
+      height: 160px;
+      margin-right: 10px;
+    }
 
+    .book-item-details {
+      flex-grow: 1;
+    }
 
+    .book-item-details h3 {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
 
-    </style>
-  </head>
+    .book-item-details p {
+      margin: 5px 0;
+    }
+
+    .book-item-details .price {
+      font-weight: bold;
+    }
+
+    .view-details-button {
+      flex-grow: 1;
+      margin-right: 10px;
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #570e06;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: "Oswald", sans-serif;
+    }
+
+    footer {
+      background-color: #996a44;
+      padding: 5px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .footer-content {
+      color: white;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+</head>
 
 <body>
   <header>
-    <h1>The Bookstore Hub</h1>
+    <div class="logo">
+      <img src="Logo_For_Bookstore_hub.jpg" alt="Logo">
+      <h1>The Bookstore Hub</h1>
+    </div>
     <nav>
       <ul>
-        <li><a href="homeOBS.html" class="home-button"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="" class="promo-button"><i class="fa fa-money-bill"></i>Promotions</a></li>
-        <li><a href="searchResults.html" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
-        <li><a href="viewcart.html" class="cart-button"><i class="fa fa-shopping-cart"></i>View cart</a></li>
-        <li><a href="viewProfile.html" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
-        <li><a href="userLogin.html" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li class="search-bar">
+          <select>
+            <option value="All">All</option>
+            <option value="authors">Authors</option>
+            <option value="title">Title</option>
+            <option value="isbn">ISBN</option>
+          </select>
+          <input type="text" placeholder="Search books...">
+          <button class="search-button"><i class="fa fa-search"></i></button>
+        </li>
+        <li><a href="#" class="edit-button"><i class="fa fa-user-cog"></i>Edit Profile</a></li>
+        <li><a href="#" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="#" class="checkout-button"><i class="fa fa-shopping-cart"></i>Checkout</a></li>
       </ul>
     </nav>
   </header>
 
+  <section>
+    <div class="search-results-container">
+      <h2>No Search Results!</h2>
+      <p>We didn't find exactly what you are looking for, but here are some things you might like.</p>
 
-  <div class="title">
-    <br>
-    No results found!
-    <br><br>
+      <div class="book-item">
+        <img src="book1.jpg" alt="Book Image" class="book-item-image">
+        <div class="book-item-details">
+          <h3>Book Title</h3>
+          <p>Author: Author Name</p>
+          <p class="price">Price: $19.99</p>
+          <button class="view-details-button">View Details</button>
+          <button class="view-details-button">Add to Cart</button>
+        </div>
+      </div>
 
+      <div class="book-item">
+        <img src="book2.jpg" alt="Book Image" class="book-item-image">
+        <div class="book-item-details">
+          <h3>Book Title</h3>
+          <p>Author: Author Name</p>
+          <p class="price">Price: $14.99</p>
+          <button class="view-details-button">View Details</button>
+          <button class="view-details-button">Add to Cart</button>
+        </div>
+      </div>
 
-</div>
+      <!-- Add more book items here -->
 
+    </div>
+  </section>
 
-<div class="title" style="font-size:35px">
-  Search Again
-</div>
-<div class="search-container">
-    <form action="/searchResults">
-      <input type="text" placeholder="Search:" name="search" style="width: 300px;">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-
-
-
-<br><br><br><br>
-  <div class="footer">
-    <br>
-    <small>Copyright -  Bookstore Hub</small>
-    <br><br>
-  
-</div>
-
+  <footer>
+    <div class="footer-content">
+      <p>Created by Group 3</p>
+    </div>
+  </footer>
 </body>
+
+</html>
