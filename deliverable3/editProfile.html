@@ -3,39 +3,39 @@
 
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <title>BookstoreHub</title>
+  <title>BookstoreHub - Edit Profile</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <style>
     /* CSS styles for the headers */
     body {
-      font-family: "Arial", sans-serif;
-      height: auto;
-      background: linear-gradient(to bottom, #f2f2f2, #e6e6e6);
-      margin: 0;
+      font-family: "Oswald", sans-serif;
+      background: linear-gradient(to bottom, #f2f2eb, #f2f2eb);
     }
 
     header {
-      background-color: #c0d8c6;
+      background-color: #b98f68;
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color: #f2f2eb;
     }
 
     header h1 {
-      font-size: 82px;
-      color: #333;
-      margin-bottom: 50px;
-      text-align: center;
-      margin-bottom: 0;
+      font-size: 70px;
+      margin: 0;
     }
 
     header nav ul {
       list-style: none;
       padding: 0;
-      margin: auto;
-      float: none;
+      margin: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      align-items: center;
     }
 
     header nav ul li {
@@ -44,94 +44,49 @@
 
     header nav ul li a {
       text-decoration: none;
-      font-size: 18px;
-      color: #333;
+      font-size: 16px;
+      color: white;
       padding: 5px 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #2b0d0a;
       border-radius: 5px;
+      background-color: #78504b;
     }
-
-    header nav ul li a.home-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-
-    }
-
-    header nav ul li a.promo-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
-    }
-
-    header nav ul li a.browse-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
-    }
-
-    header nav ul li a.login-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.loggedIn-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.cart-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a:hover {
-      background-color: #ccc;
-    }
-
-    .search-bar {
+    
+    header nav ul li.search-bar {
       display: flex;
-      justify-content: center;
-      flex-grow: 1;
+      align-items: center;
+      margin-right: 10px;
     }
 
-    .search-bar input[type="text"] {
-      padding: 5px;
-      width: 1000px;
+    header nav ul li.search-bar select {
+      padding: 7px;
+      margin-right: 0;
     }
 
-    .login-tab {
-      margin-left: auto;
+    header nav ul li.search-bar input[type="text"] {
+      padding: 7px;
+      margin-right: 5px;
+      width: 300px;
     }
 
-    .login-tab a {
-      text-decoration: none;
-      font-size: 18px;
-      color: #333;
-      padding: 5px 10px;
-      border: 1px solid #ccc;
+    header nav ul li.search-bar button {
+      padding: 7px 20px;
+      background-color: #78504b;
+      border: 1px solid #2b0d0a;
+      color: white;
       border-radius: 5px;
+      cursor: pointer;
+      margin-left: -5px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
     }
 
-    .login-tab a:hover {
-      background-color: #ccc;
+    .logo img {
+      height: 150px;
+      margin-right: 10px;
     }
 
     section {
@@ -139,134 +94,133 @@
       text-align: center;
     }
 
-    #edit-profile-form {
-      max-width: 500px;
+    .edit-profile {
+      background-color: #ffdab7;
+      max-width: 400px;
       margin: 0 auto;
-      text-align: left;
-      background-color: #fff;
+      padding: 30px;
+      border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      padding: 20px;
+      text-align: center;
+      font-size: 16px;
+      color: #4d4c4c;
     }
 
-    #edit-profile-form label {
-      display: block;
-      margin-bottom: 10px;
+    .edit-profile h2 {
+      margin-bottom: 20px;
     }
 
-    #edit-profile-form input[type="text"],
-    #edit-profile-form input[type="password"],
-    #edit-profile-form textarea {
+    .edit-profile input[type="text"],
+    .edit-profile input[type="email"],
+    .edit-profile input[type="password"] {
       width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
     }
 
-    #edit-profile-form button {
-      padding: 5px 10px;
-      background-color: #333;
-      color: #fff;
+    .edit-profile .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .edit-profile .button-container button {
+      padding: 10px 20px;
+      background-color: #78504b;
       border: none;
+      color: white;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      width: 200px;
+      max-width: 100%;
+      box-sizing: border-box;
     }
-
-    #edit-profile-form button:hover {
-      background-color: #555;
-    }
-
 
     footer {
-      background-color: #f2f2f2;
-      padding: 20px;
+      background-color: #996a44;
+      padding: 5px;
       text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
     }
 
-    footer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    footer ul li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-
-    footer ul li a {
-      text-decoration: none;
-      color: #333;
+    .footer-content {
+      color: white;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h1>The Bookstore Hub</h1>
+    <div class="logo">
+      <img src="Logo_For_Bookstore_hub.jpg" alt="Logo">
+      <h1>The Bookstore Hub</h1>
+    </div>
     <nav>
       <ul>
-        <li><a href="homeOBS.html" class="home-button"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="" class="promo-button"><i class="fa fa-money-bill"></i>Promotions</a></li>
-        <li><a href="searchResults.html" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
-        <li><a href="viewcart.html" class="cart-button"><i class="fa fa-shopping-cart"></i>View cart</a></li>
-        <li><a href="viewProfile.html" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
-        <li><a href="userLogin.html" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li class="search-bar">
+          <select>
+            <option value = "All">All</option>
+            <option value="authors">Authors</option>
+            <option value="title">Title</option>
+            <option value="isbn">ISBN</option>
+          </select>
+          <input type="text" placeholder="Search books...">
+          <button class="search-button"><i class="fa fa-search"></i></button>
+        </li>
+        <li><a href="#" class="edit-button"><i class="fa fa-user-cog"></i>Edit Profile</a></li>
+        <li><a href="#" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="#" class="checkout-button"><i class="fa fa-shopping-cart"></i>Checkout</a></li>
       </ul>
     </nav>
   </header>
-  
 
   <section>
-    <div id="edit-profile-form">
+    <div class="edit-profile">
       <h2>Edit Profile</h2>
-      <form>
-        <label for="first-name">First Name</label>
-        <input type="text" id="first-name" name="first-name" placeholder="Enter your new first name">
 
-        <label for="last-name">Last Name</label>
-        <input type="text" id="last-name" name="last-name" placeholder="Enter your new last name">
+      <h3>Change Password</h3>
+      <input type="password" placeholder="Current Password">
+      <input type="password" placeholder="New Password">
+      <input type="password" placeholder="Confirm New Password">
 
-        <label for="phone">Phone Number</label>
-        <input type="text" id="phone" name="phone" placeholder="Enter your new phone number">
+      <h3>Personal Information</h3>
+      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="Last Name">
+      <input type="email" placeholder="Email Address">
+      <input type="text" placeholder="Phone Number">
 
-        <label for="password">Change Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your new password">
+      <h3>Payment Information</h3>
+      <input type="text" placeholder="Card Type">
+      <input type="text" placeholder="Card Number">
+      <input type="text" placeholder="Expiration Date">
+      <input type="text" placeholder="Name on Card">
 
-        <label for="street">Street</label>
-        <input type="text" id="street" name="street" placeholder="Enter your new street address">
+      <h3>Address Information</h3>
+      <input type="text" placeholder="Address Line 1">
+      <input type="text" placeholder="Address Line 2">
+      <input type="text" placeholder="City">
+      <input type="text" placeholder="State">
+      <input type="text" placeholder="ZIP Code">
 
-        <label for="city">City</label>
-        <input type="text" id="city" name="city" placeholder="Enter your newcity">
-
-        <label for="zip">ZIP Code</label>
-        <input type="text" id="zip" name="zip" placeholder="Enter your new ZIP code">
-
-        <label for="state">State</label>
-        <input type="text" id="state" name="state" placeholder="Enter your new State ">
-
-        <label for="country">Country</label>
-        <input type="text" id="country" name="country" placeholder="Enter your new country">
-
-        <h3>Payment Cards</h3>
-        <div id="payment-cards">
-          <!-- Add/remove payment card section -->
-          <div class="payment-card">
-            <input type="text" name="card-name" placeholder="Cardholder Name">
-            <input type="text" name="card-number" placeholder="Card Number">
-            <input type="text" name="expiry-date" placeholder="Expiry Date">
-            <input type="text" name="cvv" placeholder="CVV">
-            <button class="remove-card">Remove</button>
-          </div>
-        </div>
-        <button id="add-card">Add Payment Card</button>
-
-        <button type="submit">Submit Changes</button>
-      </form>
+      <div class="button-container">
+        <button>Save Changes</button>
+        <button>Cancel</button>
+      </div>
     </div>
   </section>
+
   <footer>
-    <ul>
-      <li><a href="#">Copyright: BookstoreHub</a></li>
-    </ul>
+    <div class="footer-content">
+      <p>Created by Group 3</p>
+    </div>
   </footer>
 </body>
 
