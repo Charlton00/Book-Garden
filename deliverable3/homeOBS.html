@@ -13,7 +13,7 @@
     }
 
     header {
-      background-color: royalblue;
+      background-color: #996a44;
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -44,12 +44,12 @@
 
     header nav ul li a {
       text-decoration: none;
-      font-size: 18px;
-      color: royalblue;
+      font-size: 16px;
+      color: white;
       padding: 5px 10px;
-      border: 1px solid royalblue;
+      border: 1px solid #2b0d0a;
       border-radius: 5px;
-      background-color: #ffc0a1;
+      background-color:  #78504b;
     }
 
     .search-bar {
@@ -71,9 +71,9 @@
 
     .search-bar button {
       padding: 7px 20px;
-      background-color: #ffc0a1;
-      color: royalblue;
-      border: none;
+      background-color: #78504b;
+      border: 1px solid #2b0d0a;
+      color: white;
       border-radius: 5px;
       cursor: pointer;
     }
@@ -103,14 +103,18 @@
     }
 
     .book-item {
-      flex-basis: 25%;
-      margin: 10px;
-      text-align: center;
-      width: 300px;
-      background-color: #f2f2eb;
+      flex-grow: 1;
+      margin-right: 10px;
+      padding: 10px 20px;
+      font-size: 12px;
+      background-color: #ebcb9e;
+      color: royalblue;
+      border: none;
       border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      padding: 10px;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      font-family: "Montserrat", sans-serif;
     }
 
     .book-actions {
@@ -125,11 +129,12 @@
       margin-right: 10px;
       padding: 10px 20px;
       font-size: 14px;
-      background-color: #ffc0a1;
-      color: royalblue;
+      background-color:  #78504b;
+      color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-family: "Montserrat", sans-serif;
     }
 
     .book-item img {
@@ -140,15 +145,18 @@
     }
 
     .book-item h3 {
-      font-size: 18px;
+      font-weight: bolder;
+      font-size: 30px;
       margin-bottom: 5px;
-      color: royalblue;
+      color: black;
+      font-family: "Montserrat", sans-serif;
     }
 
     .book-item p {
       font-size: 14px;
-      color: #666;
+      color: #4d4c4c;
       margin-bottom: 10px;
+      font-weight: 300;
     }
 
     footer {
@@ -201,7 +209,6 @@
   </header>
 
   <section>
-    <h2 id="greeting-title">Welcome to our Online Bookstore!</h2>
     <div class="book-showcase">
       <!-- Book items go here -->
     </div>
