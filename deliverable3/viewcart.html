@@ -1,183 +1,41 @@
-
-<!-- <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> -->
+<!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheets" href="css/stylesheet.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>viewCart    
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <style>
-      body{
-        background:linear-gradient(to bottom, #f2f2f2,#e6e6e6);
-        height:auto;
-        font-family: "Arial", sans-serif;
-      }
-      .login{
-        border-radius:25px;
-        background-color:#c5f5c5;
-        width:50%;
-        padding: 14px 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        text-align:center;
-      }
-      .title{
-        font-size:50px;
-        text-align: center;
-        font-family:'Arial', sans-serif;
-      }
- 
-
-.flex-container {
-  
-  display:flex;
-  background-color:#c5f5c5;
-  justify-content: center;
-  
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 25px; 
-    padding: 14px 20px;
-    text-align:center;
-    float:left;
-  }
-  
-  .flex-container2 {
-    display: flex;
-    background-color: #333;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 25px;
-    padding: 14px 20px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    
-    
-  }
-  
-  .flex-container3 {
-    display:flex;
-    background-color:#c5f5c5;
-    justify-content:center;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 25px;
-    float:right; 
-  }
-
-.flex-container > div {
-    background: #c5f5c5;
-    margin:25px;
-    padding:.5px;
-    font-size: 19px;
-  }
-  
-    .flex-container2 > div {
-    background: rgb(126, 126, 126);
-    margin:25px;
-    padding:.5px;
-    font-size: 14px;
-    }
-  
-    .flex-container3 > div {
-    background: #c5f5c5;
-    margin:25px;
-    padding:.5px;
-    font-size: 19px;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>BookstoreHub - View Cart</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* CSS styles for the headers */
+    body {
+      font-family: "Oswald", sans-serif;
+      background: linear-gradient(to bottom, #f2f2eb, #f2f2eb);
     }
 
-    .dropdown-container{
-    display: flex;
-    background-color: rgb(126, 126, 126);
-    margin-left: 365px;
-    margin-right: 395px;
-    margin-top: 10px;
-    border-radius: 25px;
-    padding: 14px 14px;
-    text-align: center;
-    flex-wrap: wrap;
-    align-content: center;
-    flex-direction: column;
-    }
-
-    .card{
-      width:auto;
-      height:auto;
-      background-color:#fff;
-      box-shadow:0px 15px 30px rgba(0,0,0,0.1);
-      border-radius:10px;
-      overflow:hidden;
-      margin: 14px;
-    }
-      .card .info
-      {padding:15px;display:flex;justify-content:space-between;border-bottom:1px solid #e1dede;
-        background-color:#e5e5e5}
-        .card .info button
-        {height:30px;width:80px;border:none;
-          color:#fff;border-radius:4px;background-color:#000;
-          cursor:pointer;text-transform:uppercase}
-          .card .forms
-          {padding:10px}
-          .card .inputs
-          {display:flex;flex-direction:column;margin-bottom:10px}
-          .card .inputs span{font: size 20px;}
-          .card .inputs input{height:24px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
-          .card .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
-
-  .search-container {
-  margin-top:12px;
-  float: right;
-}
-
-.footer{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    text-align:center;
-    background-color:#f2f2f2;
-    color: #333;  
-}
-
-.search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-header {
-      background-color: #c0d8c6;
+    header {
+      background-color: #b98f68;
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color: #f2f2eb;
     }
 
     header h1 {
-      font-size: 82px;
-      color: #333;
-      margin-bottom: 50px;
-      text-align: center;
-      font-weight: 100;
+      font-size: 70px;
+      margin: 0;
     }
 
     header nav ul {
       list-style: none;
       padding: 0;
-      margin: auto;
-      float: none;
+      margin: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      align-items: center;
     }
 
     header nav ul li {
@@ -186,83 +44,52 @@ header {
 
     header nav ul li a {
       text-decoration: none;
-      font-size: 18px;
-      color: #333;
+      font-size: 16px;
+      color: white;
       padding: 5px 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #2b0d0a;
       border-radius: 5px;
+      background-color: #78504b;
     }
 
-    header nav ul li a.home-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-
+    header nav ul li.search-bar {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
     }
 
-    header nav ul li a.promo-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
+    header nav ul li.search-bar select {
+      padding: 7px;
+      margin-right: 0;
     }
 
-    header nav ul li a.browse-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
+    header nav ul li.search-bar input[type="text"] {
+      padding: 7px;
+      margin-right: 5px;
+      width: 300px;
     }
 
-    header nav ul li a.login-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.loggedIn-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.cart-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a:hover {
-      background-color: #ccc;
-    }
-
-    .login-tab {
-      margin-left: auto;
-    }
-
-    .login-tab a {
-      text-decoration: none;
-      font-size: 18px;
-      color: #333;
-      padding: 5px 10px;
-      border: 1px solid #ccc;
+    header nav ul li.search-bar button {
+      padding: 7px 20px;
+      background-color: #78504b;
+      border: 1px solid #2b0d0a;
+      color: white;
       border-radius: 5px;
+      cursor: pointer;
+      margin-left: -5px;
+    }
+    header nav ul li .checkout-button-header {
+        /* This is here just to differ from the actual checkout button */
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
     }
 
-    .login-tab a:hover {
-      background-color: #ccc;
+    .logo img {
+      height: 150px;
+      margin-right: 10px;
     }
 
     section {
@@ -270,169 +97,186 @@ header {
       text-align: center;
     }
 
-    #greeting-title {
-      font-size: 36px;
-      margin-bottom: 20px;
+    .cart-summary {
+      background-color: #ffdab7;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-size: 16px;
+      color: #4d4c4c;
     }
 
-    </style>
+    .cart-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  </head>
-  <body>
+    .cart-item img {
+      width: 80px;
+      height: 120px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
 
+    .cart-item-info {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .cart-item-info h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .cart-item-info p {
+      margin: 5px 0;
+    }
+
+    .cart-item-total {
+      font-size: 18px;
+    }
+
+    .cart-item-total strong {
+      color: #78504b;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    .cart-item-actions button {
+      padding: 5px 10px;
+      background-color: #78504b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .cart-total {
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    .cart-total p {
+      margin-bottom: 5px;
+    }
+
+    .cart-total strong {
+      color: #78504b;
+    }
+
+    .checkout-button {
+      padding: 10px 20px;
+      background-color: #78504b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #996a44;
+      padding: 5px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .footer-content {
+      color: white;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+</head>
+
+<body>
   <header>
-    <h1>The Bookstore Hub</h1>
+    <div class="logo">
+      <img src="Logo_For_Bookstore_hub.jpg" alt="Logo">
+      <h1>The Bookstore Hub</h1>
+    </div>
     <nav>
       <ul>
-        <li><a href="homeOBS.html" class="home-button"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="" class="promo-button"><i class="fa fa-money-bill"></i>Promotions</a></li>
-        <li><a href="searchResults.html" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
-        <li><a href="viewcart.html" class="cart-button"><i class="fa fa-shopping-cart"></i>View cart</a></li>
-        <li><a href="viewProfile.html" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
-        <li><a href="userLogin.html" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li class="search-bar">
+          <select>
+            <option value="All">All</option>
+            <option value="authors">Authors</option>
+            <option value="title">Title</option>
+            <option value="isbn">ISBN</option>
+          </select>
+          <input type="text" placeholder="Search books...">
+          <button class="search-button"><i class="fa fa-search"></i></button>
+        </li>
+        <li><a href="#" class="edit-button"><i class="fa fa-user-cog"></i>Edit Profile</a></li>
+        <li><a href="#" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="#" class="checkout-button-header"><i class="fa fa-shopping-cart"></i>Checkout</a></li>
       </ul>
     </nav>
   </header>
 
-
-
-      <div class="title">
-        Your Cart Summary
+  <section>
+    <div class="cart-summary">
+      <h2>Cart Summary</h2>
+      <div class="cart-item">
+        <img src="book1.jpg" alt="Book 1">
+        <div class="cart-item-info">
+          <h3>Harry Potter and the Philosopher's Stone</h3>
+          <p>By: J.K. Rowling</p>
+          <p>ISBN: 978-1-234567-89-0</p>
+        </div>
+        <div class="cart-item-total">
+          <p>Qty: 2</p>
+          <p>Total: <strong>$39.98</strong></p>
+        </div>
+        <div class="cart-item-actions">
+          <button class="increment-button"><i class="fa fa-plus"></i></button>
+          <button class="decrement-button"><i class="fa fa-minus"></i></button>
+          <button class="delete-button"><i class="fa fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="cart-item">
+        <img src="book2.jpg" alt="Book 2">
+        <div class="cart-item-info">
+          <h3>The Strange Case of Origami Yoda</h3>
+          <p>By: Tom Angleberger</p>
+          <p>ISBN: 978-2-345678-90-1</p>
+        </div>
+        <div class="cart-item-total">
+          <p>Qty: 1</p>
+          <p>Total: <strong>$19.99</strong></p>
+        </div>
+        <div class="cart-item-actions">
+          <button class="increment-button"><i class="fa fa-plus"></i></button>
+          <button class="decrement-button"><i class="fa fa-minus"></i></button>
+          <button class="delete-button"><i class="fa fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="cart-total">
+        <p>Subtotal: <strong>$59.97</strong></p>
+        <p>Tax: <strong>$5.40</strong></p>
+        <p>Total: <strong>$65.37</strong></p>
+      </div>
+      <button class="checkout-button">Proceed to Checkout</button>
     </div>
+  </section>
 
-    <div class='dropdown-container'>
-    <span style='float:center; font-size: 24px;'>
-    <form:form method="POST" modelAttribute="submitCheckout">
-    <label class="mr-sm-2" for="paymentCard">Select the card you want to use:</label>
-              <form:select  path="cardID">
-                <form:option value="1"  label="1" />
-                <form:option value="2"  label="2" />
-                <form:option value="3"  label="3" /> 
-              </form:select>
-            </span>
+  <footer>
+    <div class="footer-content">
+      <p>Created by Group 3</p>
     </div>
-
-    <div class='section'>
-      <div class='flex-container'>
-        <div class='order-info-content'>
-          <h2>Order Summary</h2>
-          <span class='thin'>${book}</span>
-          <br>Book Purchased<br> <span class='thin small'> Copies: ${bookPurchased} <br></span>
-          Subtotal Cost: $0.00
-          
-        </td>
-      </tr>
-      
-      <br><br>
-    
-        <td>
-        <span class='thin'>${book}</span>
-        <br>Book Sold<br> <span class='thin small'> Copies: ${bookSold} <br></span>
-        Subtotal Cost: $0.00
-      </tr>
-    
-        <br><br>
-
-
-        <br><br>
-  Have a Promo Code? Enter Here:<br>
-  <form:input class='input-field' path="promoCode" />
-          <br>
-          ${promotionResult}
-        
-</div>
-  
-</div>
-  <div class='flex-container3'>
-<div class='total'>
-    <span style='float:left;'>
-      <div class='thin dense'>Tax</div>
-      <div class='thin dense'>Subtotal</div>
-      TOTAL
-    </span>
-    <span style='float:right; text-align:right; margin-left: 25px;'>
-      <div class='thin dense'>$0.00</div>
-      <div class='thin dense'>$0.00</div>
-      $0.00
-    <br> <br>
-   <!-- <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
-    </form:form> -->
-    <a href="orderSummary.html">
-      <button" class="btn btn-secondary btn-block mb-4">Submit Order</button>
-
-  </span>  
-  </div>
- </div>
-
- <div class='flex-container2'>
-  <span style='float:center';>
-    Your Wallet:
-    </span>
-<br>  
-  <div class="card"> <div class="info"> 
-        <span>Primary Card Information</span> 
-        </div> 
-        
-        <div class="forms"> 
-        <div class="inputs"> 
-        <span>Name on Card</span> 
-        <input type="text" readonly value="${card1Name}"> </div> 
-        
-        <div class="inputs"> 
-        <span>Number</span> 
-        <input type="text" readonly value="${card1Number}"> </div> 
-    
-  </div>
-</div>
-
-<div class="card"> <div class="info"> 
-  <span>Secondary Card Information</span> 
-  </div> 
-  
-  <div class="forms"> 
-  <div class="inputs"> 
-  <span>Name on Card</span> 
-  <input type="text" readonly value="${card2Name}"> </div> 
-  
-  <div class="inputs"> 
-  <span>Number</span> 
-  <input type="text" readonly value="${card2Number}"> </div> 
-</div>
-</div>
-
-<div class="card"> <div class="info"> 
-<span>Tertiary Card Information</span> 
-</div> 
-
-<div class="forms"> 
-<div class="inputs"> 
-<span>Name on Card</span> 
-<input type="text" readonly value="${card3Name}"> </div> 
-
-<div class="inputs"> 
-<span>Number</span> 
-<input type="text" readonly value="${card3Number}"> </div> 
-</div>
-</div>
-
-
-
-</div>
-
-</div>
-
-<br><br><br><br><br><br>
-<div class="footer">
-  <br>
-  <small>Copyright - Bookstore Hub</small>
-  <br><br>
-</div>
-
+  </footer>
 </body>
-
-   
-      
-
-
 
 </html>

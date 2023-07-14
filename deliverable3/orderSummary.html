@@ -1,55 +1,41 @@
-<!-- <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%> -->
+<!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheets" href="css/stylesheet.css">
-    <title>orderSummary    
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <style>
-       body{
-        background:linear-gradient(to bottom, #f2f2f2,#e6e6e6);
-        height:auto;
-        font-family: "Arial", sans-serif;
-      }
-      .login{
-        border-radius:25px;
-        background-color:lightgrey;
-        width:50%;
-        padding: 14px 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        text-align:center;
-      }
-      .title{
-        font-size:50px;
-        text-align: center;
-        font-family:'Arial', sans-serif;
-      }
-      header {
-      background-color: #c0d8c6;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>BookstoreHub - Order Summary</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* CSS styles for the headers */
+    body {
+      font-family: "Oswald", sans-serif;
+      background: linear-gradient(to bottom, #f2f2eb, #f2f2eb);
+    }
+
+    header {
+      background-color: #b98f68;
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color: #f2f2eb;
     }
 
     header h1 {
-      font-size: 82px;
-      color: #333;
-      margin-bottom: 50px;
-      text-align: center;
-      font-weight: 100;
+      font-size: 70px;
+      margin: 0;
     }
 
     header nav ul {
       list-style: none;
       padding: 0;
-      margin: auto;
-      float: none;
+      margin: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      align-items: center;
     }
 
     header nav ul li {
@@ -58,133 +44,206 @@
 
     header nav ul li a {
       text-decoration: none;
-      font-size: 18px;
-      color: #333;
+      font-size: 16px;
+      color: white;
       padding: 5px 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #2b0d0a;
       border-radius: 5px;
+      background-color: #78504b;
     }
 
-    header nav ul li a.home-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    .logo img {
+      height: 150px;
+      margin-right: 10px;
+    }
+
+    header nav ul li.search-bar {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    header nav ul li.search-bar select {
+      padding: 7px;
+      margin-right: 0;
+    }
+
+    header nav ul li.search-bar input[type="text"] {
+      padding: 7px;
+      margin-right: 5px;
+      width: 300px;
+    }
+
+    header nav ul li.search-bar button {
+      padding: 7px 20px;
+      background-color: #78504b;
+      border: 1px solid #2b0d0a;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: -5px;
+    }
+
+    section {
+      padding: 20px;
+      text-align: center;
+      margin-top: 120;
+    }
+
+    .order-summary {
+      background-color: #ffdab7;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-size: 16px;
+      color: #4d4c4c;
+    }
+
+    .payment-info {
+      margin-bottom: 20px;
+    }
+
+    .payment-info p {
+      margin: 5px 0;
+    }
+
+    .shipping-address {
+      margin-bottom: 20px;
+    }
+
+    .shipping-address p {
+      margin: 5px 0;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .button-container button {
       padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-
+      background-color: #78504b;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      width: 200px;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
-    header nav ul li a.promo-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
+    .editcard-button {
+      text-decoration: none;
+      font-size: 13px;
+      color: white;
+      padding: 5px 10px;
+      border: 1px solid #2b0d0a;
+      border-radius: 5px;
+      background-color: #78504b;
     }
 
-    header nav ul li a.browse-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
+    .pay-button {
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      padding: 5px 10px;
+      border: 1px solid #2b0d0a;
+      border-radius: 5px;
+      background-color: #78504b;
+    }
+    
+    footer {
+      background-color: #996a44;
+      padding: 5px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
     }
 
-    header nav ul li a.login-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
+    .footer-content {
+      color: white;
     }
-
-    header nav ul li a.loggedIn-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.cart-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a:hover {
-      background-color: #ccc;
-    }
-    .footer{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    text-align:center;
-    background-color:#f2f2f2;
-    color: #333;  
-}
-
-
-    </style>
-  </head>
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+</head>
 
 <body>
-
   <header>
-    <h1>The Bookstore Hub</h1>
+    <div class="logo">
+      <img src="Logo_For_Bookstore_hub.jpg" alt="Logo">
+      <h1>The Bookstore Hub</h1>
+    </div>
     <nav>
       <ul>
-        <li><a href="homeOBS.html" class="home-button"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="" class="promo-button"><i class="fa fa-money-bill"></i>Promotions</a></li>
-        <li><a href="searchResults.html" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
-        <li><a href="viewcart.html" class="cart-button"><i class="fa fa-shopping-cart"></i>View cart</a></li>
-        <li><a href="viewProfile.html" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
-        <li><a href="userLogin.html" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li class="search-bar">
+          <select>
+            <option value = "All">All</option>
+            <option value="authors">Authors</option>
+            <option value="title">Title</option>
+            <option value="isbn">ISBN</option>
+          </select>
+          <input type="text" placeholder="Search books...">
+          <button class="search-button"><i class="fa fa-search"></i></button>
+        </li>
+        <li><a href="#" class="edit-button"><i class="fa fa-user-cog"></i>Edit Profile</a></li>
+        <li><a href="#" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="#" class="checkout-button"><i class="fa fa-shopping-cart"></i>Checkout</a></li>
       </ul>
     </nav>
   </header>
 
+  <section>
+    <div class="order-summary">
+      <h2>Order Summary</h2>
 
+      <div class="payment-info">
+        <h3>Payment Information</h3>
+        <p>Card Type: Visa</p>
+        <p>Card Number: **** **** **** 1234</p>
+        <p>Expiration Date: 08/24</p>
+        <p>Name on Card: John Doe</p>
+        <a href="#" class="editcard-button">Edit Card</a>
+      </div>
 
-  <div class="title">
-    Order Successful!
+      <div class="shipping-address">
+        <h3>Shipping Address</h3>
+        <p>Name: John Doe</p>
+        <p>Address: 123 Main St</p>
+        <p>City: City</p>
+        <p>State: State</p>
+        <p>ZIP: 12345</p>
+        <a href="#" class="editcard-button">Edit Address</a>
+      </div>
 
-</div>
+      <p>Total Price: $49.99</p>
+      <p>Tax: $4.50</p>
+      <p>Grand Total: $54.49</p>
 
-<div class="login">
-    <br>
-    
-    Book: ${title}<br>
-    Show Time: ${showtime}<br>
-    Books Purchased: ${bookPurchased}<br>
-    Books Sold: ${bookSold}<br>
-    The Promo Code " ${promoCode} " saved you $ ${moneySaved}<br>
-    Total Sum: $ ${total}<br>
-    Card Number charged: ${cardNumber}<br>
-    <br>
-    <br>
-    <a href="homeOBS.html">
-      <button" class="btn btn-secondary btn-block mb-4">Back to Home</button>
-  </a>
-  
-<br>
-<br>
-<br>
-<br>
-<div class="footer">
-  <br>
-  <small>Copyright - Bookstore Hub</small>
-  <br><br>
+      <div class="button-container">
+        <a href="#" class="pay-button">Pay Now!</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>Created by Group 3</p>
+    </div>
+  </footer>
 </body>
-
- 
-      
-
-
 
 </html>

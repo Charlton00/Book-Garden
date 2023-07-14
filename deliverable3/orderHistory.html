@@ -1,55 +1,41 @@
-<!-- <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%> -->
+<!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheets" href="css/stylesheet.css">
-    <title>orderHistory 
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <style>
-      body{
-        background:linear-gradient(to bottom, #f2f2f2,#e6e6e6);
-        height:auto;
-        font-family: "Arial", sans-serif;
-      }
-      .login{
-        border-radius:25px;
-        background-color:lightgrey;
-        width:50%;
-        padding: 14px 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        text-align:center;
-      }
-      .title{
-        font-size:50px;
-        text-align: center;
-        font-family:'Arial', sans-serif;
-      }
-      
-      header {
-      background-color: #c0d8c6;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>BookstoreHub - Order History</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* CSS styles for the headers */
+    body {
+      font-family: "Oswald", sans-serif;
+      background: linear-gradient(to bottom, #f2f2eb, #f2f2eb);
+    }
+
+    header {
+      background-color: #b98f68;
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color: #f2f2eb;
     }
 
     header h1 {
-      font-size: 82px;
-      color: #333;
-      margin-bottom: 50px;
-      text-align: center;
+      font-size: 70px;
+      margin: 0;
     }
 
     header nav ul {
       list-style: none;
       padding: 0;
-      margin: auto;
-      float: none;
+      margin: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      align-items: center;
     }
 
     header nav ul li {
@@ -58,168 +44,186 @@
 
     header nav ul li a {
       text-decoration: none;
-      font-size: 18px;
-      color: #333;
+      font-size: 16px;
+      color: white;
       padding: 5px 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #2b0d0a;
       border-radius: 5px;
+      background-color: #78504b;
     }
 
-    header nav ul li a.home-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
+    header nav ul li.search-bar {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    header nav ul li.search-bar select {
+      padding: 7px;
+      margin-right: 0;
+    }
+
+    header nav ul li.search-bar input[type="text"] {
+      padding: 7px;
+      margin-right: 5px;
+      width: 300px;
+    }
+
+    header nav ul li.search-bar button {
+      padding: 7px 20px;
+      background-color: #78504b;
+      border: 1px solid #2b0d0a;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: -5px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    .logo img {
+      height: 150px;
+      margin-right: 10px;
+    }
+
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .order-history {
+      background-color: #ffdab7;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-size: 16px;
+      color: #4d4c4c;
+    }
+
+    .order {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .order p {
+      margin: 5px 0;
+    }
+
+    .order .book-details {
+      display: flex;
+      align-items: center;
+    }
+
+    .book-details img {
+      width: 100px;
+      margin-right: 10px;
+    }
+
+    .order .reorder-button {
+      background-color: #78504b;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
       padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-
     }
 
-    header nav ul li a.promo-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
+    footer {
+      background-color: #996a44;
+      padding: 5px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
     }
 
-    header nav ul li a.browse-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-
-      margin: auto;
+    .footer-content {
+      color: white;
     }
-
-    header nav ul li a.login-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.loggedIn-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a.cart-button {
-      border: 2px solid #e5f2e5;
-      background-color: #c5f5c5;
-      padding: 10px 20px;
-      font-size: 18px;
-      margin: auto;
-    }
-
-    header nav ul li a:hover {
-      background-color: #ccc;
-    }
-.footer{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    text-align:center;
-    background-color:#f2f2f2;
-    color: #333;  
-}
-.manageCard{
-  text-align: center;
-  border-radius:25px;
-  background-color: #333;
-  margin-left:30%;
-  margin-right:30%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  color: lightgrey;
-}
-.manageCard a {
-  color: lightgrey;
-}
-
-  .centerElement{
-    text-align:center;
-  }
-
-    </style>
-  </head>
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+</head>
 
 <body>
-  <header>
-    <h1>The Bookstore Hub</h1>
-    <nav>
-      <ul>
-        <li><a href="homeOBS.html" class="home-button"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="" class="promo-button"><i class="fa fa-money-bill"></i>Promotions</a></li>
-        <li><a href="searchResults.html" class="browse-button"><i class="fa fa-search"></i>Browse</a></li>
-        <li><a href="viewcart.html" class="cart-button"><i class="fa fa-shopping-cart"></i>View cart</a></li>
-        <li><a href="viewProfile.html" class="loggedIn-button"><i class="fa fa-user"></i>${currentUser.firstName}</a></li>
-        <li><a href="userLogin.html" class="login-button"><i class="fa fa-user"></i>Login</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">
+            <img src="Logo_For_Bookstore_hub.jpg" alt="Logo">
+            <h1>The Bookstore Hub</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="search-bar">
+                    <select>
+                        <option value="All">All</option>
+                        <option value="authors">Authors</option>
+                        <option value="title">Title</option>
+                        <option value="isbn">ISBN</option>
+                    </select>
+                    <input type="text" placeholder="Search books...">
+                    <button class="search-button"><i class="fa fa-search"></i></button>
+                </li>
+                <li><a href="#" class="edit-button"><i class="fa fa-user-cog"></i>Edit Profile</a></li>
+                <li><a href="#" class="login-button"><i class="fa fa-user"></i>Login</a></li>
+                <li><a href="#" class="checkout-button"><i class="fa fa-shopping-cart"></i>Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
 
- <div class="title">
-    Account Order History
-</div>
-<br>
-  <div class="manageCard">  
-<section>
-    <h2>${book0}</h2>
-    <a href="orderBook.html"><button" class="btn btn-secondary btn-block mb-4">Reorder</button></a>
-    </div>
-        <hr> 
+  <section>
+    <div class="order-history">
+      <h2>Order History</h2>
+
+      <div class="order">
+        <div class="book-details">
+          <img src="book1.jpg" alt="Book 1">
+          <div>
+            <p>Title: Book 1</p>
+            <p>Author: Author 1</p>
+            <p>ISBN: 1234567890</p>
+            <p>Copies: 2</p>
+          </div>
+        </div>
+        <p>Total Price: $39.98</p>
+        <button class="reorder-button">Reorder</button>
+      </div>
+
+      <div class="order">
+        <div class="book-details">
+          <img src="book2.jpg" alt="Book 2">
+          <div>
+            <p>Title: Book 2</p>
+            <p>Author: Author 2</p>
+            <p>ISBN: 0987654321</p>
+            <p>Copies: 1</p>
+          </div>
+        </div>
+        <p>Total Price: $19.99</p>
+        <button class="reorder-button">Reorder</button>
+      </div>
+
+      <!-- Add more order details here -->
+
     </div>
   </section>
-</div>
 
-<div class="manageCard">  
-    <section>
-        <h2>${book1}</h2>
-        <a href="orderBook.html"><button" class="btn btn-secondary btn-block mb-4">Reorder</button></a>
-        </div>
-            <hr> 
-        </div>
-      </section>
+  <footer>
+    <div class="footer-content">
+      <p>Created by Group 3</p>
     </div>
-
-    <div class="manageCard">  
-        <section>
-            <h2>${book2}</h2>
-            <a href="orderBook.html"><button" class="btn btn-secondary btn-block mb-4">Reorder</button></a>
-            </div>
-                <hr> 
-            </div>
-          </section>
-        </div>
-
-        <div class="manageCard">  
-            <section>
-                <h2>${book3}</h2>
-                <a href="orderBook.html"><button" class="btn btn-secondary btn-block mb-4">Reorder</button></a>
-                </div>
-                    <hr> 
-                </div>
-              </section>
-    </div>
-
-      <div class="footer">
-        <br>
-        <small>Copyright - Bookstore Hub</small>
-        <br><br>
-        </div>
-     </body>
-</section>
-    
-      
-
-
+  </footer>
+</body>
 
 </html>
