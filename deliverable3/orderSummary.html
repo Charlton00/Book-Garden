@@ -146,16 +146,41 @@
       font-family: "Oswald", sans-serif;
     }
 
-    .editcard-button {
-      text-decoration: none;
-      font-size: 13px;
-      color: white;
-      padding: 5px 10px;
-      border: 1px solid #2b0d0a;
-      border-radius: 5px;
-      background-color: #570e06;
-      font-family: "Oswald", sans-serif;
+    .payment-info,
+    .shipping-address,
+    .billing-address {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
+
+    .payment-info h4,
+    .shipping-address h4,
+    .billing-address h4 {
+      margin: 5px 0;
+      width: 150px;
+      text-align: left;
+    }
+
+    .payment-fields,
+    .shipping-fields,
+    .billing-fields {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+
+    .payment-fields input,
+    .shipping-fields input,
+    .billing-fields input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #2b0d0a;
+    }
+
 
     .pay-button {
       text-decoration: none;
@@ -178,6 +203,22 @@
       margin-bottom: 10px;
       border-radius: 5px;
       border: 1px solid #2b0d0a;
+    }
+
+    .address-select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #2b0d0a;
+    }
+
+    .shipping-to-another-address-fields {
+      display: none;
+    }
+
+    #shipToAnotherAddress:checked~.billing-fields .shipping-to-another-address-fields {
+      display: block;
     }
 
     footer {
@@ -221,42 +262,104 @@
       </ul>
     </nav>
   </header>
-
   <section>
     <div class="order-summary">
       <h2>Order Summary</h2>
 
-      <div class="payment-info">
-        <h3>Payment Information</h3>
-        <p>Card Type: Visa</p>
-        <p>Card Number: **** **** **** 1234</p>
-        <p>Expiration Date: 08/24</p>
-        <p>Name on Card: John Doe</p>
-        <a href="#" class="editcard-button">Edit Card</a>
-      </div>
+      <!-- ... (previous code) ... -->
 
+
+      <div class="billing-address">
+        <h3>Billing Address</h3>
+        <select class="address-select">
+          <option value="" disabled selected>Select a saved billing address</option>
+          <option value="billing1">789 Oak St, City, State, 98765</option>
+          <option value="billing2">654 Elm St, Town, State, 43210</option>
+          <!-- Add more saved billing addresses here -->
+        </select>
+
+        <div class="billing-fields">
+          <!-- Billing Address Input Fields -->
+          <h4>Name</h4>
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <h4>Billing Street Address</h4>
+          <input type="text" placeholder="Enter Billing Street Address">
+
+          <h4>Billing City</h4>
+          <input type="text" placeholder="Enter Billing City">
+
+          <h4>Billing State</h4>
+          <input type="text" placeholder="Enter Billing State">
+
+          <h4>Billing ZIP Code</h4>
+          <input type="text" placeholder="Enter Billing ZIP Code">
+
+          <!-- Checkbox for shipping option -->
+          <div class="shipping-option">
+            <label>
+              <span>Ship to this address</span>
+              <input type="checkbox" id="shipToThisAddress" checked>
+            </label>
+
+          </div>
+        </div>
+      </div>
       <div class="shipping-address">
         <h3>Shipping Address</h3>
-        <p>Name: John Doe</p>
-        <p>Address: 123 Main St</p>
-        <p>City: City</p>
-        <p>State: State</p>
-        <p>ZIP: 12345</p>
-        <a href="#" class="editcard-button">Edit Address</a>
+        <select class="address-select">
+          <option value="" disabled selected>Select a saved address</option>
+          <option value="address1">123 Main St, City, State, 12345</option>
+          <option value="address2">456 Maple Ave, Town, State, 56789</option>
+          <!-- Add more saved addresses here -->
+        </select>
+        <div class="shipping-fields">
+          <!-- Shipping Address Input Fields -->
+          <h4>Street Address</h4>
+          <input type="text" placeholder="Enter Street Address">
+
+          <h4>City</h4>
+          <input type="text" placeholder="Enter City">
+
+          <h4>State</h4>
+          <input type="text" placeholder="Enter State">
+
+          <h4>ZIP Code</h4>
+          <input type="text" placeholder="Enter ZIP Code">
+        </div>
+      </div>
+      <div class="payment-info">
+        <h3>Payment Information</h3>
+        <select class="address-select">
+          <option value="" disabled selected>Select a saved payment method</option>
+          <option value="visa">Visa **** **** **** 1234</option>
+          <option value="mastercard">Mastercard **** **** **** 5678</option>
+          <!-- Add more saved payment methods here -->
+        </select>
+        <div class="payment-fields">
+          <!-- Payment Input Fields -->
+          <h4>Card Number</h4>
+          <input type="text" placeholder="Enter Card Number">
+
+          <h4>Cardholder Name</h4>
+          <input type="text" placeholder="Enter Cardholder Name">
+
+          <h4>Expiration Date</h4>
+          <input type="text" placeholder="Enter Expiration Date (MM/YY)">
+
+          <h4>CVV</h4>
+          <input type="text" placeholder="Enter CVV">
+        </div>
       </div>
 
       <p>Total Price: $49.99</p>
       <p>Tax: $4.50</p>
-      
-      <div class="promotion-container">
-        <label for="promotion-code">Promotion Code:</label>
-        <input type="text" id="promotion-code" placeholder="Enter promotion code...">
-      </div>
+
 
       <p>Grand Total: $54.49</p>
 
       <div class="button-container">
-        <a href="#" class="pay-button">Pay Now!</a>
+        <a href="#" class="pay-button">Checkout</a>
       </div>
     </div>
   </section>
@@ -268,6 +371,7 @@
   </footer>
 </body>
 
+<<<<<<< HEAD
 </html>
 -->
 <!DOCTYPE html>
@@ -643,3 +747,6 @@
 </body>
 
 </html>
+=======
+</html>
+>>>>>>> origin/main

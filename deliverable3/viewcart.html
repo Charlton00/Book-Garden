@@ -176,6 +176,18 @@
       color: #78504b;
     }
 
+    .promotion-container {
+      margin-bottom: 20px;
+    }
+
+    .promotion-container input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #2b0d0a;
+    }
+
     .checkout-button {
       padding: 10px 20px;
       background-color: #570e06;
@@ -264,6 +276,10 @@
           <button class="decrement-button"><i class="fa fa-minus"></i></button>
           <button class="delete-button"><i class="fa fa-trash"></i></button>
         </div>
+      </div>
+      <div class="promotion-container">
+        <label for="promotion-code">Promotion Code:</label>
+        <input type="text" id="promotion-code" placeholder="Enter promotion code...">
       </div>
       <div class="cart-total">
         <p>Subtotal: <strong>$59.97</strong></p>
